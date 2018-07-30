@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>com.alipay.sofa</groupId>
+        <artifactId>sofaboot-dependencies</artifactId>
+        <version>2.4.0</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.gl.sofa.account.service</groupId>
+    <artifactId>soaf-plugin-account</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>account-manager</module>
+        <module>account-boot</module>
+        <module>account-service</module>
+        <!--<module>account-plugin</module>-->
+    </modules>
+    <packaging>pom</packaging>
+
+
+    <distributionManagement>
+        <repository>
+            <id>localRepository</id>
+            <url>file:D:\work\tools\repository</url>
+        </repository>
+    </distributionManagement>
+
+</project>

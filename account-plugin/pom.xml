@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.alipay.sofa</groupId>
+        <artifactId>sofaboot-dependencies</artifactId>
+        <version>2.4.0</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.gl.sofa.account.plugin</groupId>
+    <artifactId>account-plugin</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gl.sofa.account.service</groupId>
+            <artifactId>account-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>sofa-ark-spi</artifactId>
+            <version>0.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alipay.sofa</groupId>
+            <artifactId>sofa-ark-maven-plugin</artifactId>
+            <version>0.4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.alipay.sofa</groupId>
+               <!-- <artifactId>sofa-ark-maven-plugin</artifactId>-->
+                <artifactId>sofa-ark-plugin-maven-plugin</artifactId>
+                <version>0.4.0</version>
+                <executions>
+                    <execution>
+                        <id>default-cli</id>
+                        <goals>
+                            <goal>ark-plugin</goal>
+                        </goals>
+                        <configuration>
+
+
+                            <!--ark 包和 ark biz 的打包存放目录，默认为工程 build 目录-->
+                            <outputDirectory>../target</outputDirectory>
+
+                            <!--生成 ark 包文件名称，默认为 ${artifactId}-->
+                           <!-- <finalName>demo-ark</finalName>-->
+                            <!--是否跳过执行 goal:repackage，默认为false-->
+                            <skip>false</skip>
+
+                            <!--是否打包、安装和发布 ark biz，详细参考 Ark Biz 文档，默认为false-->
+                            <attach>true</attach>
+
+                            <!--设置 ark 包的 classifier，默认为空-->
+                            <arkClassifier>account-plugin</arkClassifier>
+
+                            <!--设置 ark biz 的 classifier，默认为 ark-biz-->
+                            <bizClassifier>ark-biz</bizClassifier>
+
+                            <!--打包 ark biz 时，排除和指定 groupId 相同的包依赖-->
+                          <!--  <excludeGroupIds>
+                                <excludeGroupId>org.springframework</excludeGroupId>
+                            </excludeGroupIds>-->
+
+                            <!--打包 ark biz 时，排除和指定 artifactId 相同的包依赖-->
+                            <excludeArtifactIds>
+                                <excludeArtifactId>sofa-ark-spi</excludeArtifactId>
+                            </excludeArtifactIds>
+
+                            <!--打包 ark biz 时，配置不从 ark plugin 索引的类；默认情况下，ark biz 会优先索引所有 ark plugin 的导出类，
+                            添加该配置后，ark biz 将只在ark biz内部加载该类，不再优先委托 ark plugin 加载-->
+
+                        </configuration>
+                    </execution>
+                </executions>
+
+                <configuration>
+                    <attach>true</attach>
+                    <!-- 配置信息 -->
+                </configuration>
+            </plugin>
+
+       <!--     <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>-->
+
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>localRepository</id>
+            <url>file:D:\work\tools\repository</url>
+        </repository>
+    </distributionManagement>
+</project>
