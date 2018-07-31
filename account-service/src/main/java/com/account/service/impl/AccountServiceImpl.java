@@ -19,7 +19,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void create() {
-        //manager.create();
+        manager.create();
         System.out.println("创建用户");
     }
 }

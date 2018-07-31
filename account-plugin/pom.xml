@@ -66,16 +66,16 @@
                             <!--生成 ark 包文件名称，默认为 ${artifactId}-->
                            <!-- <finalName>demo-ark</finalName>-->
                             <!--是否跳过执行 goal:repackage，默认为false-->
-                            <skip>false</skip>
+                          <!--  <skip>false</skip>-->
 
                             <!--是否打包、安装和发布 ark biz，详细参考 Ark Biz 文档，默认为false-->
                             <attach>true</attach>
 
                             <!--设置 ark 包的 classifier，默认为空-->
-                            <arkClassifier>account-plugin</arkClassifier>
+                            <!--<arkClassifier>account-plugin</arkClassifier>-->
 
                             <!--设置 ark biz 的 classifier，默认为 ark-biz-->
-                            <bizClassifier>ark-biz</bizClassifier>
+                       <!--     <bizClassifier>ark-biz</bizClassifier>-->
 
                             <!--打包 ark biz 时，排除和指定 groupId 相同的包依赖-->
                           <!--  <excludeGroupIds>

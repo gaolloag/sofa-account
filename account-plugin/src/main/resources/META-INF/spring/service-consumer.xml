@@ -8,10 +8,16 @@
        default-autowire="byName">
 
 
-    <sofa:service ref="accountService" interface="com.account.service.AccountService">
+    <!--<sofa:service ref="accountService" interface="com.account.service.AccountService">
+        <sofa:binding.jvm/>
+    </sofa:service>
+
+    <sofa:service ref="accountManager" interface="com.account.manager.AccountManager">
         <sofa:binding.jvm/>
     </sofa:service>
 
     <bean id="accountService" class="com.account.service.impl.AccountServiceImpl"/>
+
+    <bean id="accountManager" class="com.account.manager.impl.AccountManagerImpl"/>-->
 
 </beans>
